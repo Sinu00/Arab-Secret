@@ -13414,7 +13414,7 @@ dd {
   content: "";
 }
 .ci-rupee:before {
-  content: "QAR";
+  content: "";
 }
 .ci-auction:before {
   content: "";

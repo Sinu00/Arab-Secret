@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const session = require("express-session");
-const MongoStore= require("connect-mongo");
 const db = require("./config/config");
 require("dotenv").config();
 const app = express();
@@ -21,7 +20,6 @@ app.use(
     secret: process.env.KEY_SECRET,
     resave: true,
     saveUninitialized: true,
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_URL }), 
     cookie: { maxAge: 6000000 },
   })
 );

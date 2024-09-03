@@ -156,7 +156,7 @@
   </div>
 
       <div class="accordion-item">
-        <h3 class="accordion-header"><a class="accordion-button collapsed" href="#cod" data-bs-toggle="collapse">QAR Cash on Delivery</a></h3>
+        <h3 class="accordion-header"><a class="accordion-button collapsed" href="#cod" data-bs-toggle="collapse"><i class="ci-rupee me-2 align-middle"></i>Cash on Delivery</a></h3>
         <div class="accordion-collapse collapse" id="cod" data-bs-parent="#payment-method">
           <div class="accordion-body fs-sm">
             <p><span class="fw-medium">Deliver into the Provided Address :</span></p>
@@ -192,7 +192,7 @@
   </div>
 
       <div class="accordion-item">
-        <h3 class="accordion-header"><a class="accordion-button" href="#cod" data-bs-toggle="collapse" aria-expanded="true">QAR Cash on Delivery</a></h3>
+        <h3 class="accordion-header"><a class="accordion-button" href="#cod" data-bs-toggle="collapse" aria-expanded="true"><i class="ci-rupee me-2 align-middle"></i>Cash on Delivery</a></h3>
         <div class="accordion-collapse collapse show" id="cod" data-bs-parent="#payment-method">
           <div class="accordion-body fs-sm">
             <p><span class="fw-medium">Deliver into the Provided Address :</span></p>
@@ -271,7 +271,7 @@
       <div class="col-lg-8">
         <div class="d-flex pt-4 mt-3">
           <div class="w-50 pe-3"><a class="btn btn-secondary d-block w-100" href="/cart"><i class="ci-arrow-left mt-sm-0 me-1"></i><span class="d-none d-sm-inline">Back to Cart</span><span class="d-inline d-sm-none">Back</span></a></div>
-          <div class="w-50 ps-2"><button class="btn btn-primary d-block w-100" type="submit" form="submitForm"><span class="d-none d-sm-inline">Place Order</span><span class="d-inline d-sm-none">Next</span><i class="ci-arrow-right mt-sm-0 ms-1"></i></button></div>
+          <div class="w-50 ps-2"><a class="btn btn-primary d-block w-100" href="/Payment"><span class="d-none d-sm-inline">Place Order</span><span class="d-inline d-sm-none">Next</span><i class="ci-arrow-right mt-sm-0 ms-1"></i></a></div>
         </div>
       </div>
     </div>
@@ -281,9 +281,8 @@
 <script>
 
 let clicked = false;
-
-$('#couponForm').on('submit', function(e){
-  e.preventDefault()
+$('#couponForm').submit((e)=>{
+        e.preventDefault()
      const code = document.getElementById('code').value
      const total = document.getElementById('total').innerHTML
      if(code == ""){
@@ -319,8 +318,7 @@ $('#couponForm').on('submit', function(e){
 
           });
      }
-});
-
+    })
 
     function selectAddress(id) {
       $(".addchange").attr('class', 'addchange text-primary text-lg-end')
@@ -360,7 +358,7 @@ $('#couponForm').on('submit', function(e){
     }
 
 
-    $("#submitForm").on('submit', function(el){
+    $("#submitForm").submit((el)=>{
   el.preventDefault();
 
   let isValid = true;
